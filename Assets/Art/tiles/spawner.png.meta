@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: a199c2ca5adaa39438bbba6e7ed7cab4
+guid: 4a191d1ab4942e64b9419f0959c702ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1807125615787039003
-    second: tiles_0
+      213: 2956541825629854486
+    second: spawner_0
   - first:
-      213: 349823833441268365
-    second: tiles_1
+      213: 7640131500133680952
+    second: spawner_1
   - first:
-      213: -6614373457484812694
-    second: tiles_2
+      213: 1649274381786300612
+    second: spawner_2
   - first:
-      213: 1639214462598301798
-    second: tiles_3
+      213: -327034336030432230
+    second: spawner_3
+  - first:
+      213: -484690809684753054
+    second: spawner_4
+  - first:
+      213: -4174447827689070462
+    second: spawner_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,49 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tiles_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 8
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b19de794c23341910800000000000000
-      internalID: 1807125615787039003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tiles_1
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 8
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d827b3e4ce2dad400800000000000000
-      internalID: 349823833441268365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tiles_2
+      name: spawner_0
       rect:
         serializedVersion: 2
         x: 0
@@ -159,14 +123,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6e68d682660534a0800000000000000
-      internalID: -6614373457484812694
+      spriteID: 61b9040402fb70920800000000000000
+      internalID: 2956541825629854486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles_3
+      name: spawner_1
       rect:
         serializedVersion: 2
         x: 8
@@ -180,8 +144,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 668cad96ed8afb610800000000000000
-      internalID: 1639214462598301798
+      spriteID: 8378db6ce13370a60800000000000000
+      internalID: 7640131500133680952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spawner_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0468fdf4663e610800000000000000
+      internalID: 1649274381786300612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spawner_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14ec8b0104267bf0800000000000000
+      internalID: -327034336030432230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spawner_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26508dec6480649f0800000000000000
+      internalID: -484690809684753054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spawner_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 280213161d16116c0800000000000000
+      internalID: -4174447827689070462
       vertices: []
       indices: 
       edges: []

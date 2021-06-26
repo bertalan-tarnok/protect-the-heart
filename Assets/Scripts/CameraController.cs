@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
 
     private Vector3 origin;
     private Vector3 difference;
+    private Vector3 pos;
 
     private bool drag = false;
 
@@ -15,11 +16,12 @@ public class CameraController : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         zoom = cam.orthographicSize;
+        pos = transform.position;
     }
 
     private void Update()
     {
-        if (Mouse.current.rightButton.IsPressed())
+        if (Mouse.current.rightButton.isPressed || Mouse.current.middleButton.isPressed)
         {
             Vector2 mousePos = Mouse.current.position.ReadValue();
 
@@ -38,9 +40,10 @@ public class CameraController : MonoBehaviour
 
         if (drag)
         {
-            Vector3 pos = origin - difference;
-            transform.position = pos;
+            pos = origin - difference;
         }
+
+        transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime * 16f);
 
         zoom -= Mouse.current.scroll.ReadValue().y / 200;
         zoom = Mathf.Clamp(zoom, 2f, 12f);
