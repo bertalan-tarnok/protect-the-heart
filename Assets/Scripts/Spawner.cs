@@ -1,10 +1,13 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] GameObject mini;
     [SerializeField] Vector2 spawnPos;
+
+    private List<GameObject> minis = new List<GameObject>();
 
     private Animator animator;
 
@@ -15,9 +18,19 @@ public class Spawner : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        for (int i = 0; i < minis.Count; i++)
+        {
+            if (minis[i] == null)
+            {
+                minis.RemoveAt(i);
+            }
+        }
+    }
+
     public void Open()
     {
-
         animator.SetBool("open", true);
     }
 
@@ -34,6 +47,9 @@ public class Spawner : MonoBehaviour
         {
             GameObject newMini = Instantiate(mini, spawnPos, Quaternion.identity);
             newMini.GetComponent<Mini>().Spawn(transform.localScale.x > 0 ? 1 : -1);
+            newMini.transform.parent = transform;
+
+            minis.Add(newMini);
 
             yield return new WaitForSeconds(1f / speed);
         }

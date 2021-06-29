@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
         FindObjectOfType<Waves>().StartCoroutine(FindObjectOfType<Waves>().Play());
     }
 
-    public void PlayAnimation()
+    public void StartingAnim()
     {
         LeanTween.moveY(gameObject, 0f, 1.5f).setEase(animationCurve).setOnComplete(Activate);
     }
@@ -39,12 +39,12 @@ public class CameraController : MonoBehaviour
     {
         if (Keyboard.current.enterKey.wasPressedThisFrame && !active)
         {
-            PlayAnimation();
+            StartingAnim();
         }
 
         if (!active) return;
 
-        if (Mouse.current.rightButton.isPressed || Mouse.current.middleButton.isPressed)
+        if (Mouse.current.middleButton.isPressed)
         {
             Vector2 mousePos = Mouse.current.position.ReadValue();
 
@@ -68,8 +68,17 @@ public class CameraController : MonoBehaviour
 
         transform.position = Vector3.Lerp(transform.position, pos, Time.unscaledDeltaTime * 16f);
 
+        if (GameManager.pause)
+        {
+            transform.position = new Vector3(
+                Mathf.Clamp(transform.position.x, -10f, 10f),
+                Mathf.Clamp(transform.position.y, -25f, 25f),
+                transform.position.z
+            );
+        }
+
         zoom -= Mouse.current.scroll.ReadValue().y / 200;
-        zoom = Mathf.Clamp(zoom, 2f, 12f);
+        zoom = Mathf.Clamp(zoom, 3f, 10f);
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, zoom, Time.unscaledDeltaTime * 16f);
     }
 }

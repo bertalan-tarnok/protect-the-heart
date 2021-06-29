@@ -13,20 +13,23 @@ scopes = {
 	"last_search.83F126EB" = ""
 	"InspectorPreview.83F126EB" = "0"
 	"currentGroup.83F126EB" = "asset"
+	"last_search.785D90A9" = ""
+	"InspectorPreview.785D90A9" = "0"
+	"currentGroup.785D90A9" = "all"
 }
 providers = {
 	asset = {
-		active = true
+		active = false
 		priority = 25
 		defaultAction = null
 	}
 	store = {
-		active = true
+		active = false
 		priority = 100
 		defaultAction = null
 	}
 	find = {
-		active = true
+		active = false
 		priority = 25
 		defaultAction = null
 	}
@@ -36,18 +39,43 @@ providers = {
 		defaultAction = null
 	}
 	packages = {
-		active = true
+		active = false
 		priority = 90
 		defaultAction = null
 	}
 	scene = {
-		active = true
+		active = false
 		priority = 50
 		defaultAction = null
 	}
 	query = {
-		active = true
+		active = false
 		priority = 100
+		defaultAction = null
+	}
+	menu = {
+		active = false
+		priority = 80
+		defaultAction = null
+	}
+	settings = {
+		active = false
+		priority = 100
+		defaultAction = null
+	}
+	help = {
+		active = false
+		priority = -1
+		defaultAction = null
+	}
+	calculator = {
+		active = false
+		priority = 10
+		defaultAction = null
+	}
+	static_methods = {
+		active = false
+		priority = 85
 		defaultAction = null
 	}
 }

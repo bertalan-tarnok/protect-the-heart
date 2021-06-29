@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Mini : MonoBehaviour
 {
-    private float speed = 1.5f;
+    private float speed = 2f;
 
     private Animator animator;
     private bool isKilling = false;
@@ -41,7 +41,7 @@ public class Mini : MonoBehaviour
             if (Mathf.Abs(transform.position.x) < 1 && !isKilling)
             {
                 animator.SetTrigger("Kill");
-                speed = 2.5f;
+                // speed = 2.5f;
                 isKilling = true;
             }
 

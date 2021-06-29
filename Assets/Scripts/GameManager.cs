@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +15,19 @@ public class GameManager : MonoBehaviour
     private float postExposure;
 
     private bool isEnding = false;
+
+    public static bool freeze = false;
+    public static bool pause = false;
+
+    [SerializeField] private TMP_Text pauseText;
+    [SerializeField] private CanvasGroup canvas;
+
+    [SerializeField] private Slider musicVolume;
+    [SerializeField] private Slider sfxVolume;
+
+    [SerializeField] private AudioSource music;
+    [SerializeField] private AudioLowPassFilter musicEffect;
+    [SerializeField] private AudioSource deathSound;
 
     private void Awake()
     {
@@ -25,11 +40,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        pauseText.enabled = pause;
+        musicEffect.enabled = pause;
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame && !isEnding)
         {
             Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+            pause = !pause;
         }
+
+        music.volume = musicVolume.value;
+        deathSound.volume = sfxVolume.value;
     }
 
     private void postExposureUpdate(float val) => colorAdjustments.postExposure.value = val;
@@ -55,5 +76,18 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public static void EndGame()
+    {
+        LeanTween.value(instance.gameObject, instance.postExposureUpdate, instance.colorAdjustments.postExposure.value, -10f, 1f)
+        .setIgnoreTimeScale(true)
+        .setOnComplete(() =>
+        {
+            LeanTween.alphaCanvas(instance.canvas, 1f, 1f).setOnComplete(() =>
+            {
+                instance.canvas.transform.GetChild(0).gameObject.SetActive(true);
+            });
+        });
     }
 }
